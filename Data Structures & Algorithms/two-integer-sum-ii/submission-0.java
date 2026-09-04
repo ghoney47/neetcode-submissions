@@ -1,0 +1,25 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int[] out = new int[2];
+
+        int i = 0;
+        int j = numbers.length-1;
+
+        while(i < numbers.length){  
+            if (numbers[i] + numbers[j] == target){
+                out[0] = i + 1;
+                out[1] = j + 1;
+                return out;
+
+            } else if (numbers[i] + numbers[j] > target){
+                j--;
+            } else {
+                // the sum is less than target, bring left pointer up
+                i++;
+            }    
+
+        }
+
+        return out;
+    }
+}
